@@ -81,8 +81,8 @@
       it('should return a mystical animal object literal', function() {
         expect(typeof controlFlow.duplicateObject()).to.equal("object");
         expect(controlFlow.duplicateObject()['city']).to.equal("Oakland");
-        expect(controlFlow.objectValuesToArray()['slingsCode']).to.equal(true);
-        expect(controlFlow.objectValuesToArray()['excitementLevel']).to.equal(10);
+        expect(controlFlow.duplicateObject()['slingsCode']).to.equal(true);
+        expect(controlFlow.duplicateObject()['excitementLevel']).to.equal(10);
       });
     });
 

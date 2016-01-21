@@ -20,9 +20,12 @@
 controlFlow.duplicateArray = function(){
   var newArray = [];
   // 1. create a for loop below to go through the originalArray created on line 9
+  for (var i = 0; i < originalArray.length; i++) {
+    newArray[i] = originalArray[i];
+  }
    // 2. push each element inside of arr inside of the newArray.
   // 3. return newArray
-  return
+  return newArray;
 };
 
 // addValues iterates through our originalArray, adds 100 to each, and adds them to our newArray. Follow the directions below to complete the challenge.
@@ -31,8 +34,12 @@ controlFlow.addValues = function(){
   // 1. create a for loop below to iterate through the originalArray created on line 9
     // 2. add 100 to each value and save the output inside of the variable valuePlusOneHundred
     // 3. without using push, add each element to the newArray. *TIP* --> how do you add a value to the end of an array without using push? 
+    for (var i = 0; i < originalArray.length; i++) {
+      var valuePlusOneHundred = originalArray[i] + 100;
+      newArray[i] = valuePlusOneHundred;
+    }
   // 4. return newArray
-  return
+  return newArray;
 };
 
 
@@ -42,18 +49,28 @@ controlFlow.multiplyValues = function(){
   // 1. finish the for loop below to iterate through the originalArray created on line 9
     // 2. multiply each value in originalArray by 2, and them into the variable multipliedValues
     // 3. push each element inside to the newArray.
+  for (var i = 0; i < originalArray.length; i++) {
+      var valuePlusOneHundred = originalArray[i] *2;
+      newArray[i] = valuePlusOneHundred;
+    }
   // 4. return newArray
-  return
+  return newArray;
 };
 
 // replaceValues iterates through the copyOfOriginalArray and REPLACES each value with 
 controlFlow.replaceValues = function(){
   // *DONT TOUCH* this creates a clean copy of an array look up array.slice() for more details
-  var copyOfOriginalArray = newArray.slice();
+  var copyOfOriginalArray = originalArray.slice();
+
+
 
   // 1. create a for loop and iterate trhough copyOfOriginalArray
+  for(var i = 0; i < copyOfOriginalArray.length; i++) {
+    copyOfOriginalArray[i] = "element has been replaced";
+  }
   // 2. inside the for loop, replace each element with the string "element has been replaced"
   // 3. return copyofOriginalArray
+  return copyOfOriginalArray;
 
 };
 
@@ -61,22 +78,49 @@ controlFlow.replaceValues = function(){
 controlFlow.objectKeysToArray = function(){
   var newArray = [];
   // 1. create a for in loop below to go through the originalObject
-    // 2. add each value to the newArray
+  for (var key in originalObject) {
+      newArray.push(key);
+  }
+    // 2. add each key to the newArray
   // 3. return newArray
-  return 
+  return newArray;
 
 };
+
+//testing 
+/*
+  var originalObject = {
+    city: 'Oakland',
+    slingsCode: true,
+    excitementLevel: 10
+  };
+  for (var key in originalObject) {
+      newArray.push = key;
+  }
+console.log(newArray);
+*/
 
 
 controlFlow.objectValuesToArray = function(){
 var newArray = [];
   // 1. create a for in loop below to go through the originalObject
   // 2. add each value to the newArray
+    for (var key in originalObject) {
+
+      newArray.push(originalObject[key]);
+  }
   // 3. return newArray
   return
 
 };
 
+//answer resembles:
+/*
+for( var key in obj ) {
+  var value = obj[key];
+  console.log(value);
+}
+*/
 controlFlow.duplicateObject = function(){
   var newObject = {};
   // 1. iterate through originalObject
