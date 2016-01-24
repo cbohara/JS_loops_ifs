@@ -20,71 +20,69 @@
 controlFlow.duplicateArray = function(){
   var newArray = [];
   // 1. create a for loop below to go through the originalArray created on line 9
-  for (var i = 0; i < originalArray.length; i++) {
-    newArray[i] = originalArray[i];
-  }
-   // 2. push each element inside of arr inside of the newArray.
+  // 2. push each element inside of arr inside of the newArray.
   // 3. return newArray
+   for(var i = 0; i < originalArray.length; i++){
+    newArray.push(originalArray[i]);
+  }
   return newArray;
 };
 
 // addValues iterates through our originalArray, adds 100 to each, and adds them to our newArray. Follow the directions below to complete the challenge.
 controlFlow.addValues = function(){
-  var newArray = [];
   // 1. create a for loop below to iterate through the originalArray created on line 9
     // 2. create a variable called valuePlusOneHundred and assign it to the current value + 100 
     // 3. without using push, add each element to the newArray. *TIP* --> how do you add a value to the end of an array without using push? 
-    for (var i = 0; i < originalArray.length; i++) {
-      var valuePlusOneHundred = originalArray[i] + 100;
-      newArray[i] = valuePlusOneHundred;
-    }
   // 4. return newArray
+  var newArray = [];
+  for(var i = 0; i < originalArray.length; i++){
+    var valuePlusOneHundred = originalArray[i] + 100;
+    newArray[i] = valuePlusOneHundred;
+  }
   return newArray;
 };
 
 
 // multiplyValues iterates through our originalArray, multiplies each value by 2, and adds them to our newArray. Follow the directions below to complete the challenge.
 controlFlow.multiplyValues = function(){
-  var newArray = [];
+
   // 1. finish the for loop below to iterate through the originalArray created on line 9
     // 2. create a variable, multipliedByTwo and assign it to the the current value times 2 
     // 3. push each element inside to the newArray.
-  for (var i = 0; i < originalArray.length; i++) {
-      var valuePlusOneHundred = originalArray[i] * 2;
-      newArray[i] = valuePlusOneHundred;
-    }
   // 4. return newArray
+  var newArray = [];
+  for(var i = 0; i < originalArray.length; i++){
+    var multipliedByTwo = originalArray[i] * 2;
+    newArray.push(multipliedByTwo);
+  }
   return newArray;
 };
 
+////DOES THIS WORK??///////
 // replaceValues iterates through the copyOfOriginalArray and REPLACES each value with 
 controlFlow.replaceValues = function(){
   // *DONT TOUCH* this creates a clean copy of an array look up array.slice() for more details
   var copyOfOriginalArray = originalArray.slice();
-
-
-
   // 1. create a for loop and iterate trhough copyOfOriginalArray
-  for(var i = 0; i < copyOfOriginalArray.length; i++) {
-    copyOfOriginalArray[i] = "element has been replaced";
-  }
   // 2. inside the for loop, replace each element with the string "element has been replaced"
   // 3. return copyofOriginalArray
-  return copyOfOriginalArray;
-
+  for(var i = 0; i < copyofOriginalArray.length; i++){
+    copyofOriginalArray[i] = 'element has been replaced';
+  }
+  return copyofOriginalArray;
 };
 
 
 controlFlow.objectKeysToArray = function(){
-  var newArray = [];
+
   // 1. create a for in loop below to go through the originalObject
-  for (var key in originalObject) {
-      newArray.push(key);
-  }
     // 2. add each key to the newArray
   // 3. return newArray
+  var newArray = [];
+  for(var key in originalObject){
+    newArray.push(key);
+  }
   return newArray;
-
 };
 
 //testing 
@@ -102,18 +100,16 @@ console.log(newArray);
 
 
 controlFlow.objectValuesToArray = function(){
-var newArray = [];
+
   // 1. create a for in loop below to go through the originalObject
   // 2. add each value to the newArray
-    for (var key in originalObject) {
-
-      newArray.push(originalObject[key]);
-  }
   // 3. return newArray
+  var newArray = [];
+  for(var key in originalObject){
+    newArray.push(originalObject[key]);
+  }
   return newArray;
-
-};
-
+}
 //answer resembles:
 /*
 for( var key in obj ) {
@@ -121,16 +117,15 @@ for( var key in obj ) {
   console.log(value);
 }
 */
+///////DOES THIS WORK?????/////////////
 controlFlow.duplicateObject = function(){
-  var newObject = {};
   // 1. iterate through originalObject
   // 2. add each key AND its corresponding value to newObject 
   // 3. return newObject
+  var newObject = {};
   for(var key in originalObject){
     newObject.key = originalObject[key];
-    console.log(newObject);
   }
-   
   return newObject;
 };
 
@@ -144,9 +139,10 @@ controlFlow.isLargerThan100 = function(){
     // 3. else, assign state to false
   // 4. return state
   if(originalArray[3] > 100){
-    var state = true;
+    state = true;
   }
-  else state = false;
+  else 
+    state = false;
   return state;
 };
 
@@ -157,36 +153,31 @@ controlFlow.isEven = function(){
   // 2. in the if block assign state to true
   // 3. else, assign state to false
   // 4. return state
-  if(originalArray[3] % 2 === 0){
-    var state = true;
-  }
-  else state = false;
+  if(originalArray[3]%2 === 0)
+    state = true;
+  else
+      state = false;
   return state;
 };
 
 
 controlFlow.checkCity = function(){
   //1. create an if statement and have it check whether the city in originalObject is equal to Oakland
-
   // LESSON: you'll notice that we haven't created a 'state' variable for you. We now want you to get used to using return statements yourself. If you return inside of an 'if', it returns that value. You can also return inside of an 'else'. Each will ONLY return if condition is met.
     // 2: if the condition passes, return 'I love Oakland!'
     // 3: else, return "which city am I in?"
-    if(originalObject.city === 'Oakland'){
+    if(originalObject.city === 'Oakland')
       return 'I Love Oakland!';
-    }
-    else{
+    else
       return 'which city am I in?';
-    }
 };
 
 controlFlow.checkCityAgain = function(){
   // copy & paste your code from above and us the negation operator to change the condition to pass to the else statement.
-      if(!originalObject.city === 'Oakland'){
+  if(!originalObject.city === 'Oakland')
       return 'I Love Oakland!';
-    }
-    else{
+    else
       return 'which city am I in?';
-    }
 };
 
 
@@ -212,11 +203,11 @@ controlFlow.loopThroughIsEven = function(){
   // 3. if an item is not even, change state to false.
   // 4. return state;
   for(var i = 0; i < originalArray.length; i++){
-    var state;
-    if(originalArray[i] % 2 === 0)
-      return state = true;
+    if(originalArray[i]%2 === 0)
+      state = true;
     else
-      return state = false;
+      state = false;
+    return state;
   }
 };
 
@@ -244,15 +235,15 @@ controlFlow.containsAndAdd = function(){
   // 4. return the result array
   for(var key in originalObject){
     var x = originalObject[key];
-    if(x.charAt(0) === 'O'){
-      result.push(key); 
+    if(x.charAt(0)=== 'O'){
+      result.push(key);
       result.push(originalObject[key]);
     }
+    return result;
   }
-  return result;
 };
 
 }());
 
-//testing 1 2 3
+
 
